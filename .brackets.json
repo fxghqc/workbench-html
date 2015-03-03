@@ -16,6 +16,9 @@
         "/home/fx/nodejs/workbench/html/bower_components/modernizr/feature-detects/forms-inputnumber-l10n.js",
         "/home/fx/nodejs/workbench/html/bower_components/modernizr/feature-detects/elem-datalist.js",
         "/home/fx/nodejs/workbench/html/bower_components/modernizr/feature-detects/canvas-todataurl-type.js",
-        "/home/fx/nodejs/workbench/html/bower_components/modernizr/feature-detects/a-download.js"
+        "/home/fx/nodejs/workbench/html/bower_components/modernizr/feature-detects/a-download.js",
+        "/home/fx/nodejs/workbench/html/bower_components/modernizr/feature-detects/webgl-extensions.js",
+        "/home/fx/nodejs/workbench/html/bower_components/modernizr/feature-detects/userdata.js",
+        "/home/fx/nodejs/workbench/html/bower_components/modernizr/feature-detects/script-async.js"
     ]
 }
