@@ -3,3 +3,4 @@ bower_components
 src/sass/.sass-cache
 .sass-cache
 Gemfile.lock
+.brackets.json

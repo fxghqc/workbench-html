@@ -53,6 +53,7 @@
     "watchify": "^2.0.0"
   },
   "dependencies": {
+    "lunar-calendar": "^0.1.4",
     "ractivate": "^0.2.0"
   }
 }
