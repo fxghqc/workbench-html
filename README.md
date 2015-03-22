@@ -1,2 +1,2 @@
 # workbench-html
-Workbench front end. Use Ractive.js and zurb/foundation
+Workbench client. Use Ractive.js and zurb/foundation

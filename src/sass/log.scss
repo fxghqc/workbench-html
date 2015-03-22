@@ -1,0 +1,16 @@
+.log {
+  width: 1000px;
+  height: 500px;
+  float: left;
+  overflow: scroll;
+  background-color: #16343D;
+  color: #8DA09D;
+  font-size: 12px;
+  line-height: 14px;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+
+ul.log {
+  list-style: none;
+}

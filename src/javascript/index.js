@@ -1,8 +1,7 @@
 var Ractive = require('ractive/ractive.runtime');
 var lunarCalendar = require('lunar-calendar');
 
-var ractive = new Ractive({
-  el: clock,
+var Clock = Ractive.extend({
   template: require('../templates/clock.html'),
   data: {
     date: new Date(),
@@ -34,14 +33,40 @@ var ractive = new Ractive({
     major: new Array( 12 ),
     minor: new Array( 60 ),
     lunar: {}
+  },
+  oninit: function() {
+    var that = this;
+    setInterval( function () {
+      var date = new Date();
+      var lunar = lunarCalendar.solarToLunar(
+      date.getFullYear(), date.getMonth() + 1, date.getUTCDate());
+      that.set( 'date', date );
+      that.set( 'lunar',  lunar);
+    }, 1000 );
   }
 });
 
 // ...then update it once a second
-setInterval( function () {
-  var date = new Date();
-  var lunar = lunarCalendar.solarToLunar(
-    date.getFullYear(), date.getMonth() + 1, date.getUTCDate());
-  ractive.set( 'date', date );
-  ractive.set( 'lunar',  lunar);
-}, 1000 );
+
+var Log = Ractive.extend({
+  template: require('../templates/log.html'),
+  data: {
+    txts: []
+  },
+  oninit: function() {
+    var that = this;
+    var socket = io();
+    socket.on('logs', function(log) {
+      that.push('txts', log);
+    });
+  }
+});
+
+var ractive = new Ractive({
+  el: main,
+  template: require('../templates/main.html'),
+  components: {
+    clock: Clock,
+    log: Log
+  }
+});
