@@ -62,11 +62,16 @@ var Log = Ractive.extend({
   }
 });
 
+var Todoist = Ractive.extend({
+  template: require('../templates/todoist.html')
+});
+
 var ractive = new Ractive({
   el: main,
   template: require('../templates/main.html'),
   components: {
     clock: Clock,
-    log: Log
+    log: Log,
+    todoist: Todoist
   }
 });
